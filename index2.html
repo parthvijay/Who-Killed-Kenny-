@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>South Park Characters</title>
+		<link rel="stylesheet" type="text/css" href="css/sprite.css">
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		<section>
+			<nav>
+				<div>
+					<header>This is South Park</header>
+				</div>
+			</nav>
+		</section>
+
+		<section>
+			<div id="container">
+				<h1>Who Killed Kenny?</h1>
+				<h5>Here are the suspects. Your job is to sort them from who you think is the most likely to the least likely, by clicking on the subject.</h5>			
+				<hr>
+				<div class="position">
+					<div id="stan"></div>
+					<h4>Stan</h4>
+				</div>
+				
+				<div class="position">
+					<div id="tweek"></div>
+					<h4>Tweek</h4>
+				</div>
+					
+				<div class="position">
+					<div id="kyle"></div>
+					<h4>Kyle</h4>
+				</div>
+					
+				<div class="position">
+					<div id="cartman"></div>
+					<h4>Cartman</h4>
+				</div>
+					
+				<div class="position">
+					<div id="wendy"></div>
+					<h4>Wendy</h4>
+				</div>	
+				
+				<div class="position">
+					<div id="ike"></div>
+					<h4>Ike</h4>
+				</div>	
+				
+				<div class="position">
+					<div id="kenny"></div>
+					<h4>Kenny</h4>
+				</div>					
+			</div>		
+		</section>
+		
+		<br>
+		<section style="float: left; width:100%">
+			<hr>
+			<h1>Here are the suspects</h1>	
+			<div id="suspects"></div>
+			<div id="button">
+				<input type="button" id="reset" value="Reset">
+				<input type="button" id="save" value="Save">
+			</div>
+		</section>
+		
+	</body>
+	
+	<script type="text/javascript">
+		$(".position").on({
+			mouseenter: function(){
+				$('.position').addClass("active");
+				$(this).css("opacity", 1);
+			},
+		
+			mouseleave: function(){
+				$('.position').removeClass("active");
+				$(this).css("opacity", "");
+			}
+		});
+		
+		$(".position").on("click", function(){
+			$(this).css("display", "none");
+			$('#suspects').append(this);
+			$(this).css("display","inline").addClass('resetToPrevious');
+		})
+		
+		$('#reset').on("click", function(){
+		//	$('.resetToPrevious').css("display", "none");
+			$("#container").append('.resetToPrevious');
+		})
+	</script>
+
+</html>
